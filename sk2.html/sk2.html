@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SSOTOSEBRANG</title>
+    <!-- Tailwind CSS for modern responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[#FDFBF7] text-[#2C221E] antialiased min-h-screen flex flex-col justify-between"
+  >
+    <header
+      class="sticky top-0 z-50 bg-[#3E2723]/95 backdrop-blur-md text-white shadow-md"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"
+      >
+        <div class="flex items-center space-x-2">
+          <span class="text-2xl"></span>
+          <h1 class="font-bold text-lg sm:text-xl tracking-wide">
+            SOTOSEBRANG
+          </h1>
+        </div>
+        <nav class="hidden md:flex space-x-6 text-sm font-medium">
+          <a href="#beranda" class="hover:text-[#D7CCC8] transition-colors"
+            >Beranda</a
+          >
+          <a href="#katalog" class="hover:text-[#D7CCC8] transition-colors"
+            >Katalog</a
+          >
+          <a href="#kontak" class="hover:text-[#D7CCC8] transition-colors"
+            >Kontak</a
+          >
+        </nav>
+        <button
+          onclick="openCart()"
+          class="bg-[#8D6E63] hover:bg-[#6D4C41] text-white px-4 py-2 rounded-xl text-sm font-medium transition-all shadow-sm flex items-center space-x-1"
+        >
+          <span>🛒 Keranjang</span>
+        </button>
+      </div>
+    </header>
+
+    <section
+      id="beranda"
+      class="relative bg-gradient-to-b from-[#3E2723] to-[#5D4037] text-white py-16 px-4 text-center"
+    >
+      <div class="max-w-3xl mx-auto space-y-4">
+        <span
+          class="bg-[#8D6E63]/40 text-[#D7CCC8] px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase"
+          >#Memulai hari Dengan Nyoto Pagi</span
+        >
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight">
+          SOTOSEBRANG
+        </h2>
+        <p
+          class="text-[#EFEBE9] text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed"
+        >
+          Rasakan kehangatan dan kenikmatan Rempah" pilihan degan soto pagi hari
+        </p>
+        <div class="pt-4">
+          <a
+            href="#katalog"
+            class="bg-[#D7CCC8] text-[#3E2723] hover:bg-white font-semibold px-6 py-3 rounded-xl transition-all shadow-lg inline-block"
+          >
+            Jelajahi Menu
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <main id="katalog" class="max-w-6xl mx-auto px-4 py-12 flex-grow w-full">
+      <div class="flex justify-between items-center mb-8">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-[#3E2723]">
+            Katalog Produk
+          </h2>
+          <p class="text-[#795548] text-sm mt-1">
+            Pilih menu favorit Anda dan nikmati kelezatannya
+          </p>
+        </div>
+      </div>
+
+      <!-- Product Grid with fixed syntax wrapper -->
+      <div
+        class="product-grid grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
+      >
+        <!-- Product Card 1 -->
+        <div
+          class="product-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#EFEBE9] flex flex-col justify-between group"
+        >
+          <div>
+            <div class="relative overflow-hidden aspect-video bg-[#EFEBE9]">
+              <span
+                class="absolute top-3 left-3 bg-[#3E2723]/80 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-lg font-medium z-10"
+                >Best Seller</span
+              >
+              <img
+                src="https://cdn-jpr.jawapos.com/images/18/2025/09/16/Untitled-1033205068.jpg"
+                class="foto w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                alt="Cappuccino Klasik"
+                onerror="
+                  this.src =
+                    'https://placehold.co/600x400/3E2723/FFFFFF?text=Cappuccino'
+                "
+              />
+            </div>
+            <div class="p-5">
+              <h3 class="judul font-bold text-lg text-[#3E2723]">SOTO AYAM</h3>
+              <p class="description text-sm text-[#6D4C41] mt-1">
+                Perpaduan Kuah Original dengan Rempah" dan daging ayam.
+              </p>
+            </div>
+          </div>
+          <div class="p-5 pt-0 flex items-center justify-between mt-4">
+            <div>
+              <span class="text-xs text-[#8D6E63] block">Harga</span>
+              <span class="harga font-bold text-[#3E2723] text-lg"
+                >Rp 8.000</span
+              >
+            </div>
+            <button
+              onclick="addToCart('Cappuccino Klasik', 20000)"
+              class="btn-buy bg-[#3E2723] hover:bg-[#5D4037] text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-all shadow-sm flex items-center space-x-1.5"
+            >
+              <span>+ Beli</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div
+          class="product-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#EFEBE9] flex flex-col justify-between group"
+        >
+          <div>
+            <div class="relative overflow-hidden aspect-video bg-[#EFEBE9]">
+              <span
+                class="absolute top-3 left-3 bg-[#8D6E63]/90 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-lg font-medium z-10"
+                >Favorit</span
+              >
+              <img
+                src="https://tse4.mm.bing.net/th/id/OIP.EujpOMN1dqugdjZPtAnFcgHaE8?r=0&rs=1&pid=ImgDetMain&o=7&rm=3=80"
+                class="foto w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                alt="Cappuccino Susu Manis"
+                onerror="
+                  this.src =
+                    'https://placehold.co/600x400/5D4037/FFFFFF?text=Cappuccino+Susu'
+                "
+              />
+            </div>
+            <div class="p-5">
+              <h3 class="judul font-bold text-lg text-[#3E2723]">
+                SOTO DAGING SAPI
+              </h3>
+              <p class="description text-sm text-[#6D4C41] mt-1">
+                Perpaduan soto dengan daging Sapi yang Nikmat.
+              </p>
+            </div>
+          </div>
+          <div class="p-5 pt-0 flex items-center justify-between mt-4">
+            <div>
+              <span class="text-xs text-[#8D6E63] block">Harga</span>
+              <span class="harga font-bold text-[#3E2723] text-lg"
+                >Rp 10.000</span
+              >
+            </div>
+            <button
+              onclick="addToCart('Cappuccino Susu', 20000)"
+              class="btn-buy bg-[#3E2723] hover:bg-[#5D4037] text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-all shadow-sm flex items-center space-x-1.5"
+            >
+              <span>+ Beli</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div
+          class="product-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-[#EFEBE9] flex flex-col justify-between group"
+        >
+          <div>
+            <div class="relative overflow-hidden aspect-video bg-[#EFEBE9]">
+              <span
+                class="absolute top-3 left-3 bg-[#A1887F]/90 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-lg font-medium z-10"
+                >Baru</span
+              >
+              <img
+                src="https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/ae6e400e-f7e1-4e3c-a242-cf72006661fc_Go-Biz_20210625_155246.jpeg"
+                class="foto w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                alt="Espresso Hitam"
+                onerror="
+                  this.src =
+                    'https://placehold.co/600x400/3E2723/FFFFFF?text=Espresso'
+                "
+              />
+            </div>
+            <div class="p-5">
+              <h3 class="judul font-bold text-lg text-[#3E2723]">SOTO PISAH</h3>
+              <p class="description text-sm text-[#6D4C41] mt-1">
+                Nikmati Sensasi Soto dengan Di pisah.
+              </p>
+            </div>
+          </div>
+          <div class="p-5 pt-0 flex items-center justify-between mt-4">
+            <div>
+              <span class="text-xs text-[#8D6E63] block">Harga</span>
+              <span class="harga font-bold text-[#3E2723] text-lg"
+                >Rp 12.000</span
+              >
+            </div>
+            <button
+              onclick="addToCart('Espresso Single', 15000)"
+              class="btn-buy bg-[#3E2723] hover:bg-[#5D4037] text-white px-4 py-2.5 rounded-xl text-sm font-medium transition-all shadow-sm flex items-center space-x-1.5"
+            >
+              <span>+ Beli</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      id="kontak"
+      class="bg-[#3E2723] text-white py-8 mt-12 border-t border-[#4E342E]"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left gap-4"
+      >
+        <div>
+          <h3 class="font-bold text-lg">SOTOSEBRANG</h3>
+          <p class="text-xs text-[#D7CCC8] mt-1">
+            Jl. Ps. Hewan, Depok, Ambarketawang, Yogyakarta
+          </p>
+        </div>
+        <p class="text-xs text-[#BCAAA4]">
+          &copy; 2026 SOTOSEBRANG. Hak cipta dilindungi.
+        </p>
+      </div>
+    </footer>
+
+    <div
+      id="toast"
+      class="fixed bottom-5 right-5 bg-[#3E2723] text-white px-5 py-3 rounded-xl shadow-2xl transform translate-y-32 opacity-0 transition-all duration-300 z-50 flex items-center space-x-3 border border-[#5D4037]"
+    >
+      <span class="text-xl">✅</span>
+      <div>
+        <h4 id="toast-title" class="font-bold text-sm">Berhasil!</h4>
+        <p id="toast-desc" class="text-xs text-[#D7CCC8]">
+          Item telah ditambahkan ke keranjang.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      function addToCart(itemName, price) {
+        const toast = document.getElementById('toast');
+        const toastTitle = document.getElementById('toast-title');
+        const toastDesc = document.getElementById('toast-desc');
+
+        toastTitle.innerText = "Ditambahkan ke Keranjang";
+        toastDesc.innerText = ${itemName} seharga Rp ${price.toLocaleString('id-ID')} berhasil dimasukkan.;
+
+        toast.classList.remove('translate-y-32', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+
+        setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-32', 'opacity-0');
+        }, 3500);
+      }
+
+      function openCart() {
+        const toast = document.getElementById('toast');
+        const toastTitle = document.getElementById('toast-title');
+        const toastDesc = document.getElementById('toast-desc');
+
+        toastTitle.innerText = "Keranjang Belanja";
+        toastDesc.innerText = "Fitur keranjang online siap dikembangkan lebih lanjut!";
+
+        toast.classList.remove('translate-y-32', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+
+        setTimeout(() => {
+          toast.classList.remove('translate-y-0', 'opacity-100');
+          toast.classList.add('translate-y-32', 'opacity-0');
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>

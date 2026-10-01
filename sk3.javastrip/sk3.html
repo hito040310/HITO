@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Invoice Sederhana</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #1f63c9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .card {
+        background-color: #ffffff;
+        padding: 24px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 360px;
+      }
+      h1 {
+        font-size: 20px;
+        margin-top: 0;
+        margin-bottom: 4px;
+        text-align: center;
+      }
+      p.subtitle {
+        font-size: 12px;
+        color: #666;
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      label {
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+      }
+      input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      .row {
+        display: flex;
+        gap: 10px;
+      }
+      .row .form-group {
+        flex: 1;
+      }
+      .total-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+      }
+      .total-label {
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .total-value {
+        font-size: 16px;
+        font-weight: bold;
+        color: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <!-- 1. Judul Halaman -->
+      <h1>Kalkulator Invoice Sederhana</h1>
+      <p class="subtitle">Hitung otomatis total tagihan barang</p>
+
+      <!-- 2. Formulir Input Data Transaksi -->
+      <div class="form-group">
+        <label for="namaBarang">Nama Barang</label>
+        <input
+          type="text"
+          id="namaBarang"
+          placeholder="Contoh: Mouse Wireless"
+        />
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label for="hargaBarang">Harga Barang (Rp)</label>
+          <input type="number" id="hargaBarang" placeholder="0" min="0" />
+        </div>
+        <div class="form-group">
+          <label for="jumlahBeli">Jumlah Beli</label>
+          <input type="number" id="jumlahBeli" placeholder="0" min="0" />
+        </div>
+      </div>
+
+      <!-- 5. Tampilan Hasil Perhitungan -->
+      <div class="total-container">
+        <span class="total-label">Total Tagihan:</span>
+        <span class="total-value" id="totalTagihan">Rp 0</span>
+      </div>
+    </div>
+
+    <script>
+      // Ambil elemen input dan output dari DOM
+      const inputHarga = document.getElementById("hargaBarang");
+      const inputJumlah = document.getElementById("jumlahBeli");
+      const outputTotal = document.getElementById("totalTagihan");
+
+      // Fungsi perhitungan total tagihan
+      function hitungTotal() {
+        // Ambil nilai input dan konversi ke angka (jika kosong, gunakan 0)
+        const harga = parseFloat(inputHarga.value) || 0;
+        const jumlah = parseFloat(inputJumlah.value) || 0;
+
+        // 4. Rumus Perhitungan: Total = Harga Barang * Jumlah Beli
+        const total = harga * jumlah;
+
+        // Format angka ke format mata uang Rupiah
+        outputTotal.textContent = "Rp " + total.toLocaleString("id-ID");
+      }
+
+      // 3 & Catatan: Menggunakan event listener 'input' pada kedua kolom
+      inputHarga.addEventListener("input", hitungTotal);
+      inputJumlah.addEventListener("input", hitungTotal);
+    </script>
+  </body>
+</html>
